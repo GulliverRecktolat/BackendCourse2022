@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+</head>
+<body>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="" method="post">
+	<p>
+	    <label for="username">Create username</label>
+	    <input type="text" name="username">
+	</p>
+	<p>
+	    <label for="password">Create password</label>
+	    <input type="password" name="password1">
+	</p>
+	<p>
+	    <label for="password">Repeat password</label>
+	    <input type="password" name="password2">
+	</p>
+	<p>
+	    <input type="submit" value="Send">
+	</p>
+    </form>
+
+</body>
+</html>

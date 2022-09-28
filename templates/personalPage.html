@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal page</title>
+</head>
+<body>
+	<p>Welcome, {{ user }}, it`s your personal page.</p>
+    {% if message != "None" %}
+	    <p>{{ message }}</p>
+    {% endif %}
+    <form action="" method="post" style="border: 4px double black; padding: 20px; position: absolute"> Put the product up for sale:
+        <p>
+            <label for="title">Title</label>
+            <input type="text" name="title" style="position: absolute; left: 70px">
+        </p>
+        <p>
+            <label for="price">Price</label>
+            <input type="number" name="price" style="position: absolute; left: 70px">
+        </p>
+        <p>
+            <input type="submit" value="Send">
+        </p>
+    </form>
+
+    <div style="border: 4px double black; padding: 20px; position: absolute; left: 300px; display: flex"> List of goods on sale:
+        <p style="position: relative; left: -50px; top: 15px">Product</p>
+        <p style="position: relative; left: 100px; top: 15px">Price</p>
+        <ol style="position: relative; left: -225px; top: 40px">
+        {% for good in goods %}
+            <ul style="position: relative; left: -50px">
+                <input type="checkbox">
+                <p style="position: relative; left: 40px; display: inline-block">{{ good.title }}</p>
+                <p style="position: absolute; left: 300px; display: inline-block">{{ good.price }}</p>
+            </ul>
+        {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
